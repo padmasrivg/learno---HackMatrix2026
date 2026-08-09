@@ -1,1694 +1,439 @@
-# Learno: Your AI Learning Partner
+#LEARNO
+#AI-Powered Learning Management System
 
-Build a complete, production-style Learning Management System called "Learno".
+#Learn. Practice. Progress.
 
-Learno is a modern AI-powered Learning Management System inspired by platforms such as NPTEL, but it must be an original design and implementation.
+1. About the Project
 
-IMPORTANT:
+Learno is a full-stack Learning Management System (LMS) designed to provide students with an interactive, personalized, and measurable digital learning experience.
 
-This is a hackathon project and I have complete it by today .
+The platform enables students to discover courses, enroll in courses, access lessons, complete quizzes, track learning progress, analyze performance, receive personalized recommendations, interact with an AI learning assistant, and earn course completion certificates.
 
-Therefore:
+Learno also provides dedicated dashboards for students, instructors, and administrators.
 
-- Prioritize functionality and reliability.
+2. Problem Statement
 
-- Do not create a static prototype.
+Traditional online learning platforms often focus mainly on course delivery and assessments. Students may still face difficulty identifying what to study next, getting immediate help with difficult concepts, understanding quiz performance, and monitoring their learning progress effectively.
 
-- Do not use fake/mock data for core features.
+Instructors also need efficient tools to manage courses, lessons, quizzes, and student performance.
 
-- All important data must be stored in a real PostgreSQL database.
+Learno addresses these challenges by combining course management, assessment, progress tracking, analytics, personalized recommendations, and AI-assisted learning in one platform.
 
-- All user actions must persist to the database.
+3. Our Solution
 
-- Authentication must be real.
+Learno provides an end-to-end learning workflow:
 
-- Course enrollment must be real.
+Course Discovery → Course Enrollment → Structured Lessons → Progress Tracking → Interactive Quizzes → Performance Analytics → Personalized Recommendations → AI Learning Assistance → Course Completion → Digital Certificate
 
-- Quiz scoring must be real.
+4. Objectives
 
-- Progress tracking must be real.
+1. Provide a centralized platform for online learning.
+2. Allow students to discover and enroll in courses.
+3. Provide structured lessons and learning content.
+4. Automatically track student learning progress.
+5. Conduct online quizzes and automatically calculate scores.
+6. Provide meaningful performance analytics.
+7. Provide AI-based assistance for difficult concepts.
+8. Recommend relevant learning content.
+9. Allow instructors to manage courses and assessments.
+10. Allow administrators to manage the platform.
+11. Provide certificates after successful course completion.
+12. Maintain secure and persistent user data.
 
-- Instructor course management must be real.
+5. Key Features
 
-- Admin management must be real.
+STUDENT
+• Secure registration and login
+• Course browsing, search and filtering
+• Course enrollment
+• Structured lessons and video support
+• Lesson completion tracking
+• Automatic course progress calculation
+• Online quizzes and automatic scoring
+• Quiz history and performance analytics
+• Personalized course/lesson recommendations
+• Learno AI learning assistant
+• Course completion certificates
+• Student profile and dashboard
 
-- AI features must work through a secure backend/API.
+INSTRUCTOR
+• Instructor dashboard
+• Create, edit and delete courses
+• Add, edit and delete lessons
+• Create and manage quizzes
+• Add and manage quiz questions
+• View enrolled students
+• View course and assessment statistics
 
-- The application must be deployable.
+ADMIN
+• Admin dashboard
+• User management
+• Course management
+• Platform statistics
+• Role-based administrative access
 
-====================================================
+6. Unique Features
 
-1. PROJECT NAME
+1. Learno AI Learning Assistant
+Students can ask questions about learning topics and receive AI-powered explanations, examples, summaries, and practice questions through the Gemini API.
 
-====================================================
+2. Personalized Learning Recommendations
+Learno uses course enrollment, lesson progress, categories, and quiz performance to recommend relevant learning content.
 
-LEARNO
+3. Quiz Performance Analytics
+Students can view scores, average performance, highest scores, recent attempts, and performance trends.
 
-Tagline:
+4. Automatic Progress Tracking
+Course progress is calculated from actual completed lessons and persisted in the database.
 
-"Learn. Practice. Progress."
+5. Digital Course Certificates
+Students who satisfy course completion requirements can receive a digital certificate containing the student name, course name, completion date, and certificate ID.
 
-Purpose:
+7. User Roles
 
-Learno is an AI-powered LMS where students can discover courses, enroll, learn through structured lessons, take quizzes, track their progress, receive personalized recommendations, ask an AI learning assistant questions, and earn certificates after completing courses.
+Student — Learns courses, completes lessons, attempts quizzes, tracks progress, uses AI assistance, and earns certificates.
 
-====================================================
+Instructor — Creates and manages courses, lessons, quizzes, questions, and views student performance.
 
-2. TECHNOLOGY REQUIREMENTS
+Admin — Manages users, courses, and platform-level data.
 
-====================================================
-
-Use the following technology stack wherever supported:
-
-Frontend:
-
-- React
-
-- Vite
-
-- TypeScript
-
-- Tailwind CSS
-
-- React Router
-
-- Modern responsive UI
-
-Backend:
-
-- Node.js
-
-- Express.js
-
-- REST APIs
-
-- TypeScript
-
-Database:
-
-- PostgreSQL
-
-- Supabase PostgreSQL
-
-ORM:
-
-- Prisma
-
-Authentication:
-
-- JWT
-
-- bcrypt password hashing
-
-- Role-based authorization
-
-AI:
-
-- Gemini API
-
-- API key must NEVER be exposed in the frontend
-
-Deployment target:
-
-- Frontend: Vercel
-
-- Backend: Render
-
-- Database: Supabase
-
-Version control:
-
-- GitHub
-
-Do not introduce unnecessary technologies.
-
-====================================================
-
-3. USER ROLES
-
-====================================================
-
-Implement three roles:
-
-1. STUDENT
-
-2. INSTRUCTOR
-
-3. ADMIN
-
-Each role must have different permissions.
-
-====================================================
-
-4. STUDENT FEATURES
-
-====================================================
-
-Create a complete student experience.
-
-Student can:
-
-- Register
-
-- Login
-
-- Logout
-
-- View profile
-
-- Browse courses
-
-- Search courses
-
-- Filter courses
-
-- View course details
-
-- Enroll in courses
-
-- View enrolled courses
-
-- Open lessons
-
-- Watch lesson videos
-
-- Read lesson content
-
-- Mark lessons as completed
-
-- Automatically track course progress
-
-- Continue from the last accessed lesson
-
-- Take quizzes
-
-- Submit quizzes
-
-- Receive instant results
-
-- View quiz history
-
-- View quiz performance analytics
-
-- Receive learning recommendations
-
-- Ask Learno AI questions
-
-- Complete courses
-
-- Generate certificates
-
-- Download certificates
-
-====================================================
-
-5. STUDENT DASHBOARD
-
-====================================================
-
-Create a modern dashboard.
-
-Dashboard must show:
-
-- Welcome message
-
-- Total enrolled courses
-
-- Courses in progress
-
-- Completed courses
-
-- Overall learning progress
-
-- Continue Learning section
-
-- Recent quiz results
-
-- Recommended courses
-
-- Certificates
-
-- Recent activity
-
-Example:
-
---------------------------------
-
-Welcome back, Student !
-
-Continue Learning
-
-[Course Card]
-
-My Learning
-
-[Course Card] [Course Card]
-
-Quiz Performance
-
-[Chart]
-
-Recommended For You
-
-[Course Card] [Course Card]
-
-Certificates
-
-[Certificate Card]
-
---------------------------------
-
-All information must come from the database.
-
-====================================================
-
-6. COURSE SYSTEM
-
-====================================================
-
-Courses must contain:
-
-- Course title
-
-- Description
-
-- Category
-
-- Difficulty
-
-- Duration
-
-- Thumbnail
-
-- Instructor
-
-- Modules/lessons
-
-- Quizzes
-
-- Created date
-
-- Updated date
-
-- Enrollment count
-
-Create course cards showing:
-
-- Thumbnail
-
-- Title
-
-- Instructor
-
-- Category
-
-- Difficulty
-
-- Duration
-
-- Enrollment count
-
-- Progress if enrolled
-
-- Enroll/View button
-
-====================================================
-
-7. COURSE DETAILS PAGE
-
-====================================================
-
-Course detail page should display:
-
-- Course thumbnail
-
-- Course title
-
-- Instructor
-
-- Description
-
-- Category
-
-- Difficulty
-
-- Duration
-
-- Number of lessons
-
-- Number of quizzes
-
-- Enrollment count
-
-- Course curriculum
-
-If the student is not enrolled:
-
-Show:
-
-"Enroll Now"
-
-If enrolled:
-
-Show:
-
-"Continue Learning"
-
-====================================================
-
-8. ENROLLMENT SYSTEM
-
-====================================================
-
-Implement real enrollment.
-
-When a student clicks Enroll:
-
-Frontend
-
-→ Backend API
-
-→ PostgreSQL
-
-→ Successful response
-
-→ UI updates immediately
-
-Prevent duplicate enrollment.
-
-Store:
-
-- student ID
-
-- course ID
-
-- enrollment date
-
-- completion status
-
-====================================================
-
-9. LESSON SYSTEM
-
-====================================================
-
-Each course should have multiple lessons.
-
-Lesson fields:
-
-- Title
-
-- Description
-
-- Content
-
-- Video URL
-
-- Duration
-
-- Order
-
-Student lesson page must contain:
-
-- Course name
-
-- Lesson title
-
-- Lesson content
-
-- Video player/embed if video URL exists
-
-- Previous lesson
-
-- Next lesson
-
-- Mark as Complete button
-
-- Course progress
-
-- AI Assistant
-
-When the student marks a lesson complete:
-
-Persist completion in PostgreSQL.
-
-Do not rely on localStorage for actual progress.
-
-====================================================
-
-10. REAL PROGRESS TRACKING
-
-====================================================
-
-Progress must be calculated from actual completed lessons.
-
-Example:
-
-Course has 10 lessons.
-
-Student completes 7.
-
-Display:
-
-70% completed
-
-7 / 10 lessons completed
-
-The progress bar must automatically update after lesson completion.
-
-Store progress in PostgreSQL.
-
-Display:
-
-- Completed lessons
-
-- Total lessons
-
-- Percentage
-
-- Last accessed lesson
-
-- Completion status
-
-====================================================
-
-11. QUIZ SYSTEM
-
-====================================================
-
-Implement real quizzes.
-
-Instructor can create:
-
-- Quiz
-
-- Questions
-
-- Four options
-
-- Correct answer
-
-Student can:
-
-- Open quiz
-
-- Select answers
-
-- Submit quiz
-
-- Receive score
-
-Backend calculates the score.
-
-Store:
-
-- Student
-
-- Quiz
-
-- Score
-
-- Total questions
-
-- Percentage
-
-- Attempt date
-
-IMPORTANT:
-
-Never expose correct answers to students before quiz submission.
-
-After submission show:
-
-Score:
-
-8 / 10
-
-Percentage:
-
-80%
-
-Correct:
-
-8
-
-Incorrect:
-
-2
-
-Result:
-
-Passed
-
-====================================================
-
-12. QUIZ ANALYTICS
-
-====================================================
-
-Create quiz performance analytics.
-
-Student dashboard should show:
-
-- Recent quiz scores
-
-- Average score
-
-- Highest score
-
-- Quiz history
-
-- Performance chart
-
-Use charts where appropriate.
-
-Also identify weak performance.
-
-Example:
-
-DBMS:
-
-65%
-
-Java:
-
-85%
-
-Networking:
-
-90%
-
-Then recommend reviewing relevant lessons when performance is low.
-
-====================================================
-
-13. UNIQUE FEATURE — LEARNO AI
-
-====================================================
-
-Create an AI Learning Assistant called:
-
-"Ask Learno AI"
-
-This is one of the main unique features.
-
-The AI assistant should appear inside course/lesson pages.
-
-Example UI:
-
---------------------------------
-
-🤖 Ask Learno AI
-
-Ask anything about this lesson...
-
-[ Type your question... ] [Ask]
-
-AI response:
-
-"Normalization is a database design technique..."
-
---------------------------------
-
-Students can ask questions such as:
-
-"What is normalization?"
-
-"Explain this topic simply."
-
-"Give me an example."
-
-"Create 3 practice questions."
-
-The AI should provide educational responses.
-
-Use Gemini API.
-
-IMPORTANT SECURITY REQUIREMENT:
-
-Never put the Gemini API key in frontend code.
-
-The request must go through the secure backend:
-
-React
-
-↓
-
-Express backend
-
-↓
-
-Gemini API
-
-↓
-
-Express backend
-
-↓
-
-React
-
-Use environment variables.
-
-If the AI API is unavailable, display a friendly error and keep the rest of Learno functional.
-
-====================================================
-
-14. UNIQUE FEATURE — PERSONALIZED RECOMMENDATIONS
-
-====================================================
-
-Create a:
-
-"Recommended For You"
-
-section.
-
-Recommendations should use simple rules based on:
-
-- Courses enrolled
-
-- Course categories
-
-- Quiz performance
-
-- Incomplete courses
-
-- Learning history
-
-Example:
-
-If student performs poorly in DBMS:
-
-"Recommended:
-
-Database Normalization — Review this lesson"
-
-If student completed Java basics:
-
-"Recommended:
-
-Advanced Java Programming"
-
-Do not build complicated machine learning.
-
-A simple explainable recommendation system is sufficient.
-
-====================================================
-
-15. UNIQUE FEATURE — CERTIFICATES
-
-====================================================
-
-When a student successfully completes a course:
-
-Generate a certificate.
-
-Certificate must contain:
-
-LEARNO
-
-Certificate of Completion
-
-"This certificate is awarded to"
-
-Student Name
-
-"For successfully completing"
-
-Course Name
-
-Completion Date
-
-Certificate ID
-
-Allow the student to download the certificate as PDF.
-
-Only allow certificates after course completion.
-
-====================================================
-
-16. INSTRUCTOR DASHBOARD
-
-====================================================
-
-Create a professional instructor dashboard.
-
-Show:
-
-- Total courses
-
-- Total enrolled students
-
-- Total lessons
-
-- Average quiz score
-
-- Course completion statistics
-
-Instructor can:
-
-- Create course
-
-- Edit course
-
-- Delete course
-
-- Add lesson
-
-- Edit lesson
-
-- Delete lesson
-
-- Create quiz
-
-- Edit quiz
-
-- Delete quiz
-
-- Add questions
-
-- Edit questions
-
-- Delete questions
-
-- View enrolled students
-
-- View course analytics
-
-Instructor must only be able to modify their own courses.
-
-====================================================
-
-17. ADMIN DASHBOARD
-
-====================================================
-
-Create admin dashboard.
-
-Display:
-
-- Total users
-
-- Total students
-
-- Total instructors
-
-- Total courses
-
-- Total enrollments
-
-Admin can:
-
-- View users
-
-- Search users
-
-- Manage users
-
-- Manage courses
-
-- Delete inappropriate courses
-
-- Change user roles if appropriate
-
-Admin APIs must be protected.
-
-====================================================
-
-18. AUTHENTICATION
-
-====================================================
-
-Implement real authentication.
-
-Registration:
-
-- Name
-
-- Email
-
-- Password
-
-- Role where appropriate
-
-Login:
-
-- Email
-
-- Password
-
-Password must be hashed with bcrypt.
-
-Use JWT authentication.
-
-Implement:
-
-- Register
-
-- Login
-
-- Logout
-
-- Current user
-
-- Protected routes
-
-- Role-based authorization
-
-Do not store plain-text passwords.
-
-Do not expose JWT secrets.
-
-====================================================
-
-19. DATABASE
-
-====================================================
-
-Use PostgreSQL.
-
-Use Prisma ORM.
-
-Create relational database tables/models:
-
-User
-
-Course
-
-Lesson
-
-Enrollment
-
-LessonProgress
-
-Quiz
-
-Question
-
-QuizAttempt
-
-Certificate
-
-Use proper relationships and foreign keys.
-
-Suggested relationships:
-
-User
-
-→ Courses created
-
-User
-
-→ Enrollments
-
-User
-
-→ LessonProgress
-
-User
-
-→ QuizAttempts
-
-User
-
-→ Certificates
-
-Course
-
-→ Lessons
-
-Course
-
-→ Quizzes
-
-Course
-
-→ Enrollments
-
-Quiz
-
-→ Questions
-
-Enrollment
-
-→ LessonProgress
-
-Include:
-
-createdAt
-
-updatedAt
-
-where appropriate.
-
-Prevent duplicate enrollments.
-
-====================================================
-
-20. REAL-TIME DATA REQUIREMENT
-
-====================================================
-
-The application must use real persistent data.
-
-Do not use static arrays as the primary data source.
-
-Do not create fake API responses.
-
-When the user performs an action:
-
-Enrollment
-
-Lesson completion
-
-Quiz submission
-
-Course creation
-
-Lesson creation
-
-Course update
-
-the change must be saved to PostgreSQL and reflected in the UI immediately after the API succeeds.
-
-Use API refetch/state updates where appropriate.
-
-For dashboards, fetch current database values.
-
-WebSockets are NOT required.
-
-"Real-time" means the application must immediately synchronize the UI with actual backend/database changes.
-
-====================================================
-
-21. RESPONSIVE UI
-
-====================================================
-
-Create a modern professional UI.
-
-Design inspiration:
-
-- NPTEL
-
-- Coursera
-
-- Udemy
-
-- Modern SaaS dashboards
-
-BUT:
-
-Do not copy their branding or exact UI.
-
-Learno must have its own identity.
-
-Design characteristics:
-
-- Clean
-
-- Modern
-
-- Minimal
-
-- Professional
-
-- Student friendly
-
-- Responsive
-
-- Accessible
-
-Support:
-
-Desktop
-
-Tablet
-
-Mobile
-
-====================================================
-
-22. BRANDING
-
-====================================================
-
-Brand:
-
-LEARNO
-
-Tagline:
-
-"Learn. Practice. Progress."
-
-Use a professional education/technology visual identity.
-
-Create:
-
-- Learno logo/text
-
-- Navbar
-
-- Footer
-
-- Consistent buttons
-
-- Cards
-
-- Dashboard components
-
-- Progress indicators
-
-Use a clean modern color system.
-
-Prefer a professional blue/indigo educational theme with appropriate neutral backgrounds.
-
-====================================================
-
-23. REQUIRED PAGES
-
-====================================================
-
-PUBLIC:
-
-/
-
- /courses
-
- /courses/:id
-
- /login
-
- /register
+8. System Workflow
 
 STUDENT:
-
-/student/dashboard
-
-/student/courses
-
-/student/courses/:id
-
-/student/courses/:courseId/lesson/:lessonId
-
-/student/courses/:courseId/quiz/:quizId
-
-/student/certificates
-
-/student/profile
+Register → Login → Dashboard → Browse Courses → Enroll → Study Lessons → Mark Complete → Progress Update → Take Quiz → View Score → View Analytics → Ask Learno AI → Complete Course → Certificate
 
 INSTRUCTOR:
-
-/instructor/dashboard
-
-/instructor/courses
-
-/instructor/courses/create
-
-/instructor/courses/:id/edit
-
-/instructor/courses/:id/lessons
-
-/instructor/courses/:id/quizzes
+Login → Dashboard → Create Course → Add Lessons → Create Quiz → Add Questions → Publish/Manage Course → Monitor Students → View Analytics
 
 ADMIN:
+Login → Dashboard → View Users → Manage Users → View Courses → Manage Courses → Monitor Platform
 
-/admin/dashboard
+9. System Architecture
 
-/admin/users
+Learno follows a full-stack architecture:
 
-/admin/courses
+React + Vite Frontend
+        ↓
+REST API
+        ↓
+Node.js + Express Backend
+        ↓
+Prisma ORM
+        ↓
+PostgreSQL / Supabase
 
-====================================================
+The backend also securely communicates with the Gemini API for the Learno AI assistant.
 
-24. UI STATES
-
-====================================================
-
-Every important page must have:
-
-Loading state
-
-Empty state
-
-Error state
-
-Success state
-
-Example:
-
-Loading courses...
-
-No courses found.
-
-Unable to load courses.
-
-Course enrolled successfully.
-
-Use toast notifications where appropriate.
-
-====================================================
-
-25. SECURITY
-
-====================================================
-
-Implement:
-
-- Password hashing
-
-- JWT authentication
-
-- Protected routes
-
-- Role-based authorization
-
-- Input validation
-
-- Secure API calls
-
-- CORS
-
-- Environment variables
-
-Never expose:
-
-DATABASE_PASSWORD
-
-JWT_SECRET
-
-GEMINI_API_KEY
-
-Do not commit .env files.
-
-Create .env.example.
-
-====================================================
-
-26. DEMO DATA
-
-====================================================
-
-Create realistic seed/demo data.
-
-Include:
-
-1 Admin
-
-1 Instructor
-
-2 Students
-
-At least 5 courses.
-
-Each course should have:
-
-3–5 lessons
-
-At least 1 quiz
-
-Each quiz:
-
-5–10 questions
-
-Use realistic educational course names such as:
-
-- Python Programming Fundamentals
-
-- Web Development
-
-- Database Management Systems
-
-- Machine Learning Basics
-
-- Computer Networks
-
-Do not use lorem ipsum.
-
-====================================================
-
-27. ERROR HANDLING
-
-====================================================
-
-Handle:
-
-Invalid login
-
-Duplicate registration
-
-Invalid token
-
-Unauthorized access
-
-Course not found
-
-Lesson not found
-
-Quiz not found
-
-Duplicate enrollment
-
-Database errors
-
-AI API errors
-
-Network errors
-
-Display friendly messages.
-
-Never expose backend stack traces to users.
-
-====================================================
-
-28. PERFORMANCE
-
-====================================================
-
-Keep the application lightweight.
-
-Avoid unnecessary dependencies.
-
-Use reusable components.
-
-Optimize images.
-
-Avoid unnecessary API calls.
-
-Do not over-engineer.
-
-====================================================
-
-29. FINAL PROJECT STRUCTURE
-
-====================================================
-
-Create a clean structure similar to:
-
-learno/
-
-frontend/
-
-backend/
-
-prisma/
-
-README.md
-
-.env.example
-
-Do not create an unnecessarily complicated architecture.
-
-====================================================
-
-30. README
-
-====================================================
-
-Create a professional README containing:
-
-Project name
-
-Project description
-
-Features
-
-Unique features
-
-Technology stack
-
-Architecture
-
-Database schema overview
-
-Installation
-
-Environment variables
-
-How to run frontend
-
-How to run backend
-
-Demo accounts
-
-API overview
-
-Deployment instructions
-
-Future enhancements
-
-====================================================
-
-31. DEPLOYMENT
-
-====================================================
-
-Prepare the project for:
+10. Technology Stack
 
 Frontend:
-
-Vercel
+• React
+• Vite
+• TypeScript
+• Tailwind CSS
+• React Router
+• Axios
 
 Backend:
-
-Render
+• Node.js
+• Express.js
+• TypeScript
+• JWT
+• bcrypt
 
 Database:
+• PostgreSQL
+• Supabase
+• Prisma ORM
+
+Artificial Intelligence:
+• Gemini API
+
+Development and Deployment:
+• Git
+• GitHub
+• Vercel
+• Render
+
+11. Database Design
+
+Main entities:
+
+User
+Course
+Lesson
+Enrollment
+LessonProgress
+Quiz
+Question
+QuizAttempt
+Certificate
+
+Relationships:
+• Users can create courses and enroll in courses.
+• Courses contain lessons and quizzes.
+• Quizzes contain questions.
+• Enrollments connect students with courses.
+• LessonProgress tracks completed lessons.
+• QuizAttempt stores student assessment results.
+• Certificates are issued for completed courses.
+
+12. Project Structure
+
+learno/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── layouts/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── context/
+│   │   └── utils/
+│   └── package.json
+│
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── middleware/
+│   │   ├── services/
+│   │   └── utils/
+│   ├── prisma/
+│   │   ├── schema.prisma
+│   │   └── seed.ts
+│   └── package.json
+│
+├── .env.example
+├── .gitignore
+└── README.md
+
+13. Application Pages
+
+Public:
+• Home
+• Courses
+• Course Details
+• Login
+• Register
+
+Student:
+• Student Dashboard
+• My Courses
+• Course Learning Page
+• Lesson Page
+• Quiz Page
+• Certificates
+• Profile
+
+Instructor:
+• Instructor Dashboard
+• Course Management
+• Course Creation
+• Lesson Management
+• Quiz Management
+
+Admin:
+• Admin Dashboard
+• User Management
+• Course Management
+
+14. Real-Time Data Synchronization
+
+Learno uses persistent backend data rather than static frontend data for core operations.
+
+Example:
+Student Action → React Frontend → REST API → Express Backend → Prisma → PostgreSQL → API Response → Frontend State Update
 
-Supabase PostgreSQL
+When a student marks a lesson complete, the progress is saved to PostgreSQL, recalculated, returned by the API, and immediately reflected in the interface.
 
-Make sure:
+15. Security
 
-Frontend API URL can be configured through environment variables.
+• JWT-based authentication
+• bcrypt password hashing
+• Protected routes
+• Role-based authorization
+• Input validation
+• CORS configuration
+• Environment variables for secrets
 
-Backend database URL can be configured through environment variables.
+Sensitive values such as DATABASE_URL, JWT_SECRET, and GEMINI_API_KEY must never be committed to GitHub. The repository should contain an .env.example file with placeholders.
 
-CORS supports the production frontend URL.
+16. Installation
 
-AI API key remains on backend.
+Prerequisites:
+• Node.js
+• npm
+• Git
+• GitHub account
+• Supabase account
 
-====================================================
+Clone:
+git clone https://github.com/YOUR_USERNAME/learno-lms.git
+cd learno-lms
 
-32. PRIORITY
+Install frontend:
+cd frontend
+npm install
 
-====================================================
+Install backend:
+cd ../backend
+npm install
 
-Because I have only 4 days, implement features in this priority:
+17. Environment Variables
 
-MUST WORK:
+Backend .env:
 
-1. Authentication
+PORT=5000
+DATABASE_URL=your_supabase_database_url
+JWT_SECRET=your_jwt_secret
+GEMINI_API_KEY=your_gemini_api_key
+CLIENT_URL=http://localhost:5173
 
-2. Role-based access
+Frontend .env:
 
-3. Student dashboard
+VITE_API_URL=http://localhost:5000/api
 
-4. Course browsing
+Never commit actual .env files or secret keys.
 
-5. Course details
+18. Database Setup
 
-6. Enrollment
+From the backend directory:
 
-7. Lessons
+npx prisma generate
+npx prisma migrate dev
 
-8. Progress tracking
+If seed data is configured:
 
-9. Quiz
+npx prisma db seed
 
-10. Quiz scoring
+19. Running the Application
 
-11. Instructor course management
+Start backend:
 
-12. Admin management
-
-13. PostgreSQL persistence
-
-UNIQUE FEATURES:
-
-14. Learno AI Assistant
-
-15. Quiz analytics
-
-16. Personalized recommendations
-
-17. Certificate generation
-
-If an advanced feature causes problems, NEVER break the core LMS.
-
-====================================================
-
-33. IMPORTANT IMPLEMENTATION RULE
-
-====================================================
-
-Do not build only a frontend prototype.
-
-Every important button must perform a real operation.
-
-For example:
-
-"Enroll Now"
-
-→ real API
-
-→ database insert
-
-→ UI update
-
-"Mark Complete"
-
-→ real API
-
-→ database update
-
-→ progress recalculation
-
-→ UI update
-
-"Submit Quiz"
-
-→ backend scoring
-
-→ database record
-
-→ result shown
-
-"Create Course"
-
-→ backend API
-
-→ database insert
-
-→ instructor dashboard update
-
-"Ask AI"
-
-→ backend
-
-→ Gemini
-
-→ response
-
-====================================================
-
-34. DEVELOPMENT APPROACH
-
-====================================================
-
-Build the project incrementally.
-
-First create the core application architecture.
-
-Then implement:
-
-PHASE 1:
-
-Project setup and UI foundation
-
-PHASE 2:
-
-Database and authentication
-
-PHASE 3:
-
-Student course system
-
-PHASE 4:
-
-Lessons and progress
-
-PHASE 5:
-
-Quiz system
-
-PHASE 6:
-
-Instructor dashboard
-
-PHASE 7:
-
-Admin dashboard
-
-PHASE 8:
-
-AI assistant
-
-PHASE 9:
-
-Recommendations and analytics
-
-PHASE 10:
-
-Certificates
-
-PHASE 11:
-
-Testing and bug fixing
-
-PHASE 12:
-
-Deployment
-
-Do not remove working functionality when adding new features.
-
-====================================================
-
-35. FINAL ACCEPTANCE CRITERIA
-
-====================================================
-
-The project is considered complete only when:
-
-A student can:
-
-Register
-
-↓
-
-Login
-
-↓
-
-Browse courses
-
-↓
-
-Enroll
-
-↓
-
-Open course
-
-↓
-
-Study lessons
-
-↓
-
-Mark lessons complete
-
-↓
-
-See progress update
-
-↓
-
-Take quiz
-
-↓
-
-Receive score
-
-↓
-
-See analytics
-
-↓
-
-Get recommendations
-
-↓
-
-Ask Learno AI
-
-↓
-
-Complete course
-
-↓
-
-Receive certificate
-
-An instructor can:
-
-Login
-
-↓
-
-Create course
-
-↓
-
-Add lessons
-
-↓
-
-Create quiz
-
-↓
-
-View students
-
-↓
-
-View course statistics
-
-An admin can:
-
-Login
-
-↓
-
-View users
-
-↓
-
-View courses
-
-↓
-
-Manage platform data
-
-All important actions must persist in PostgreSQL.
-
-====================================================
-
-36. FINAL INSTRUCTION
-
-====================================================
-
-Build Learno as a genuinely functional full-stack application, not a visual mockup.
-
-Prioritize:
-
-1. Working functionality
-
-2. Real database persistence
-
-3. Authentication/security
-
-4. Clean UX
-
-5. Unique AI features
-
-6. Deployment readiness
-
-
-
-Do not add unnecessary features.
-
-Start by creating the project foundation and database/authentication architecture, then continue feature by feature.
-
-Do not wait for me to provide every tiny requirement; make sensible engineering decisions while following the requirements above.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/894ed75e-9b0f-431d-872a-f0840e8314f5).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+cd backend
 npm run dev
-```
+
+Backend:
+http://localhost:5000
+
+Start frontend in another terminal:
+
+cd frontend
+npm run dev
+
+Frontend:
+http://localhost:5173
+
+20. API Overview
+
+Authentication:
+POST /api/auth/register
+POST /api/auth/login
+GET  /api/auth/me
+
+Courses:
+GET    /api/courses
+GET    /api/courses/:id
+POST   /api/courses
+PUT    /api/courses/:id
+DELETE /api/courses/:id
+
+Enrollment:
+POST /api/enrollments
+GET  /api/enrollments
+
+Progress:
+POST /api/progress
+GET  /api/progress/:courseId
+
+Quizzes:
+GET  /api/quizzes/:id
+POST /api/quizzes/:id/submit
+
+AI:
+POST /api/ai/chat
+
+The exact endpoints may vary according to the final implementation.
+
+21. Testing Checklist
+
+Student:
+☐ Register
+☐ Login
+☐ Browse courses
+☐ Search/filter courses
+☐ Enroll
+☐ Open lessons
+☐ Mark lesson complete
+☐ Verify progress
+☐ Attempt quiz
+☐ Submit quiz
+☐ Verify score
+☐ View analytics
+☐ Use Learno AI
+☐ Complete course
+☐ Generate certificate
+
+Instructor:
+☐ Login
+☐ Create course
+☐ Manage lessons
+☐ Create quiz
+☐ Manage questions
+☐ View students
+☐ View statistics
+
+Admin:
+☐ Login
+☐ View users
+☐ Manage users
+☐ View courses
+☐ Manage courses
+
+22. Deployment
+
+Frontend: Vercel
+Backend: Render
+Database: Supabase PostgreSQL
+
+Production environment variables must be configured on the respective deployment platforms. CORS and production API URLs must be configured before deployment.
+
+23. Live Links
+
+Live Application: YOUR_VERCEL_URL
+Backend API: YOUR_RENDER_URL
+GitHub Repository: YOUR_GITHUB_REPOSITORY_URL
+
+Replace these placeholders with the actual links before submission.
+
+24. Future Enhancements
+
+• Live classes
+• Discussion forums
+• Peer-to-peer learning
+• Advanced AI tutoring
+• Voice-based AI assistant
+• AI-generated quizzes
+• Advanced recommendation engine
+• Gamification
+• Badges and achievements
+• Leaderboards
+• Mobile application
+• Assignment submission
+• Instructor-student messaging
+• Learning streaks
+• Advanced learning analytics
+
+25. Project Information
+
+Project Name: Learno
+Project Type: College Capstone / Hackathon Project
+Domain: EdTech
+Category: Learning Management System / Artificial Intelligence / Full-Stack Development
+Target Users: Students, Instructors, Administrators
+Development Approach: AI-Assisted / Vibe Coding
+
+26. License
+
+This project is developed for educational and hackathon purposes.
