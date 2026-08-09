@@ -181,32 +181,59 @@ Relationships:
 12. Project Structure
 
 learno/
+
 ├── frontend/
+
 │   ├── src/
+
 │   │   ├── components/
+
 │   │   ├── pages/
+
 │   │   ├── layouts/
+
 │   │   ├── services/
+
 │   │   ├── hooks/
+
 │   │   ├── context/
+
 │   │   └── utils/
+
 │   └── package.json
+
 │
+
 ├── backend/
+
 │   ├── src/
+
 │   │   ├── controllers/
+
 │   │   ├── routes/
+
 │   │   ├── middleware/
+
 │   │   ├── services/
+
 │   │   └── utils/
+
 │   ├── prisma/
+
 │   │   ├── schema.prisma
+
 │   │   └── seed.ts
+
 │   └── package.json
+
 │
+
 ├── .env.example
+
 ├── .gitignore
+
 └── README.md
+
 
 13. Application Pages
 
@@ -347,36 +374,64 @@ The exact endpoints may vary according to the final implementation.
 21. Testing Checklist
 
 Student:
+
 ☐ Register
+
 ☐ Login
+
 ☐ Browse courses
+
 ☐ Search/filter courses
+
 ☐ Enroll
+
 ☐ Open lessons
+
 ☐ Mark lesson complete
+
 ☐ Verify progress
+
 ☐ Attempt quiz
+
 ☐ Submit quiz
+
 ☐ Verify score
+
 ☐ View analytics
+
 ☐ Use Learno AI
+
 ☐ Complete course
+
 ☐ Generate certificate
 
 Instructor:
+
 ☐ Login
+
 ☐ Create course
+
 ☐ Manage lessons
+
 ☐ Create quiz
+
 ☐ Manage questions
+
 ☐ View students
+
 ☐ View statistics
 
+
 Admin:
+
 ☐ Login
+
 ☐ View users
+
 ☐ Manage users
+
 ☐ View courses
+
 ☐ Manage courses
 
 22. Deployment
