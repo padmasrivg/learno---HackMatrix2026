@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { LoadingState, ErrorState, EmptyState } from "@/components/states";
 
-export const Route = createFileRoute("/courses")({
+export const Route = createFileRoute("/courses/")({
   head: () => ({
     meta: [
       { title: "Course catalogue — Learno" },
