@@ -122,7 +122,7 @@ function LessonView() {
       </div>
 
       <div className="mt-8">
-        <AskLearnoAI lessonId={lessonId} courseTitle={detail.data?.course.title} />
+        <AskLearnoAI lessonId={lessonId} courseTitle={detail.data?.course.title ?? ""} />
       </div>
     </div>
   );

@@ -22,26 +22,25 @@ export const Route = createFileRoute("/_authenticated/student/profile")({
 });
 
 function ProfilePage() {
-  const { user, profile, role, refreshProfile } = useAuth();
+  const { user, fullName, role, refresh } = useAuth();
   const [name, setName] = useState("");
   const [bio, setBio] = useState("");
 
   useEffect(() => {
-    setName(profile?.full_name ?? "");
-    setBio(profile?.bio ?? "");
-  }, [profile]);
+    setName(fullName);
+  }, [fullName]);
 
   const save = useMutation({
     mutationFn: async () => {
       const { error } = await supabase
         .from("profiles")
-        .update({ full_name: name.trim().slice(0, 100), bio: bio.trim().slice(0, 500) })
+        .update({ full_name: name.trim().slice(0, 100), bio: bio.trim().slice(0, 500) || null })
         .eq("id", user!.id);
       if (error) throw error;
     },
     onSuccess: async () => {
       toast.success("Profile updated");
-      await refreshProfile();
+      await refresh();
     },
     onError: () => toast.error("Could not update your profile."),
   });
