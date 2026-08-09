@@ -268,9 +268,6 @@ Prerequisites:
 • GitHub account
 • Supabase account
 
-Clone:
-git clone https://github.com/YOUR_USERNAME/learno-lms.git
-cd learno-lms
 
 Install frontend:
 cd frontend
@@ -282,19 +279,10 @@ npm install
 
 17. Environment Variables
 
-Backend .env:
-
-PORT=5000
-DATABASE_URL=your_supabase_database_url
-JWT_SECRET=your_jwt_secret
-GEMINI_API_KEY=your_gemini_api_key
 CLIENT_URL=http://localhost:5173
-
-Frontend .env:
 
 VITE_API_URL=http://localhost:5000/api
 
-Never commit actual .env files or secret keys.
 
 18. Database Setup
 
