@@ -6,7 +6,7 @@ import { LoadingState, ErrorState, EmptyState } from "@/components/states";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/_authenticated/student/courses")({
+export const Route = createFileRoute("/_authenticated/student/courses/")({
   head: () => ({
     meta: [
       { title: "My learning — Learno" },
