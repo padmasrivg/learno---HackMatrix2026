@@ -1,7 +1,7 @@
-#LEARNO
-#AI-Powered Learning Management System
+#LEARNO#
+#AI-Powered Learning Management System#
 
-#Learn. Practice. Progress.
+#Learn. Practice. Progress.#
 
 1. About the Project
 
