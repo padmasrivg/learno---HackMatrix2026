@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "An AI-assisted learning platform with structured courses, graded quizzes and verifiable certificates.",
+          "Enrol in structured courses, track real lesson progress, take graded quizzes, get AI help and earn certificates on Learno.",
       },
     ],
   }),

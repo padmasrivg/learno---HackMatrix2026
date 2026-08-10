@@ -86,11 +86,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Learno is an AI-assisted learning platform with structured courses, graded quizzes, real progress tracking and certificates.",
+          "Enrol in structured courses, track real lesson progress, take graded quizzes, get AI help and earn certificates on Learno.",
       },
       { property: "og:site_name", content: "Learno" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Learno — Learn. Practice. Progress." },
+      { name: "twitter:title", content: "Learno — Learn. Practice. Progress." },
+      { property: "og:description", content: "Enrol in structured courses, track real lesson progress, take graded quizzes, get AI help and earn certificates on Learno." },
+      { name: "twitter:description", content: "Enrol in structured courses, track real lesson progress, take graded quizzes, get AI help and earn certificates on Learno." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/dd311936-c20e-456c-90c8-b0065edcabdf" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/dd311936-c20e-456c-90c8-b0065edcabdf" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
